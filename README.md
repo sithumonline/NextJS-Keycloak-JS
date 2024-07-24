@@ -1,8 +1,8 @@
 # Next.js with Keycloak Authentication
 
-## .env.local
+## .env
 
-Before installation, set .env.local with your Keycloak data
+Before installation, set .env with your Keycloak data
 
 ```yaml
 NEXT_PUBLIC_KEYCLOAK_URL=http://localhost:8080
@@ -52,7 +52,7 @@ npm install
 
 ### 3. Configure Keycloak
 
-Set .env.local with your Keycloak data
+Set .env with your Keycloak data
 
 
 ### 4. Start the Application
