@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --purple-color: "#9747FF";
+  --green-color: "#56E39F";
+  --dark-color: "#545454";
+}
+
+body {
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+  color: #545454;
+  font-weight: 500;
+  background: linear-gradient(138.2deg, rgba(255, 255, 255, 0.15) 15.11%, rgba(86, 227, 159, 0.15) 35.12%, rgba(218, 134, 115, 0.15) 47.59%, rgba(249, 112, 104, 0.15) 55.78%, rgba(242, 154, 94, 0.15) 66.63%, rgba(237, 180, 88, 0.15) 75.17%, rgba(214, 172, 100, 0.15) 83.12%, rgba(39, 111, 191, 0.15) 99.7%), #FFFFFF;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+progress {
+  border-radius: 50px;
+  height: 1.5rem;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+}
+progress.progress-bar::-webkit-progress-bar {
+  background-color: white;
+  box-shadow: 0px 0px 10px #9747FF;
+}
+progress.calendar-weekly-score-bar::-webkit-progress-bar {
+  background-color: #ECECEC;
+  box-shadow: 0;
+}
+progress::-webkit-progress-value {
+  border-radius: 50px;
+}
+progress.progress-bar::-webkit-progress-value {
+  background-color: #9747FF;
+}
+progress.calendar-weekly-score-bar::-webkit-progress-value {
+  background: linear-gradient(185.75deg, #56E39F 0%, #EDB458 96.13%);;
+}
+progress::-moz-progress-bar {
+  border-radius: 50px;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 0px 0px 10px #9747FF;
+  position: relative;
+  z-index: 10;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 10px #9747FF;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1.5rem;
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(151, 71, 255, 0.2) 11.25%, #9747FF 100%);
+  border-radius: 50px;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1.5rem;
+  background: linear-gradient(to right, rgba(151, 71, 255, 0.2) 11.25%, #9747FF 100%);
+  border-radius: 50px;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #9747FF;
+  border-radius: 50px;
+}
+input[type=range]::-ms-fill-upper {
+  background: #9747FF;
+  border-radius: 50px;
+}
