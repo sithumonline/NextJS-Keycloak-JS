@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Keycloak from 'keycloak-js';
 import Cookies from 'js-cookie';
 import Router from 'next/router'; // Import Router
-import App from 'next/app';
+
 
 const Logout = () => {
   useEffect(() => {

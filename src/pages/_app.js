@@ -4,6 +4,7 @@ import Keycloak from 'keycloak-js';
 import Cookies from 'js-cookie';
 import MainComp from '.';
 import Logout from './logout';
+import About from './about';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -52,7 +53,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MainComp userProfile={userProfile} />} />
         <Route path="/logout" element={<Logout userProfile={userProfile} />} />
-        {/* Define other routes as needed */}
+        <Route path="/about" element={<About userProfile={userProfile} />} />
+        {/* Other Routes */}
       </Routes>
     </Router>
 );
