@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import MainComp from ".";
 import Logout from "./logout";
 import About from "./about";
+import { jwtDecode } from "jwt-decode";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,8 +31,13 @@ function App() {
         .then((authenticated) => {
           setIsAuthenticated(authenticated);
           if (authenticated) {
+            const decodedToken = jwtDecode(keycloak.token);
+            const expiresAt = new Date(decodedToken.exp * 1000);
+
             Cookies.set("isAuthenticated", "true", { expires: 1 });
-            Cookies.set("keycloak-token", keycloak.token, { expires: 1 });
+            Cookies.set("keycloak-token", keycloak.token, {
+              expires: expiresAt,
+            });
             Cookies.set("keycloak-refresh-token", keycloak.refreshToken, {
               expires: 1,
             });
@@ -65,8 +71,11 @@ function App() {
       .then((authenticated) => {
         setIsAuthenticated(authenticated);
         if (authenticated) {
+          const decodedToken = jwtDecode(keycloak.token);
+          const expiresAt = new Date(decodedToken.exp * 1000);
+
           Cookies.set("isAuthenticated", "true", { expires: 1 });
-          Cookies.set("keycloak-token", keycloak.token, { expires: 1 });
+          Cookies.set("keycloak-token", keycloak.token, { expires: expiresAt });
           Cookies.set("keycloak-refresh-token", keycloak.refreshToken, {
             expires: 1,
           });
