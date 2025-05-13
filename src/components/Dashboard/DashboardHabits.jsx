@@ -16,9 +16,11 @@ export default function DashboardHabits() {
       Authorization: `Bearer ${token}`,
     };
 
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8081";
+
     // send GET request to the server
     const response = await fetch(
-      "http://localhost:8081/api/v1/notes/" + userId,
+      `${baseUrl}/api/v1/notes/${userId}`,
       {
         method: "GET",
         headers,
